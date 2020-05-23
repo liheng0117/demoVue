@@ -63,7 +63,7 @@
             </template>
           </el-table-column>
         </el-table>
-      <!-- 模态框 -->
+        <!-- 模态框 -->
         <el-dialog :title="title" :visible.sync="dialogFormVisible">
           <el-form label-width="110px" :model="form" ref="form">
             <el-form-item label="供应商名称">
