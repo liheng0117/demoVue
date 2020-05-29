@@ -24,22 +24,22 @@ export default {
     return {
       loginBackground: {
         backgroundImage: "url(" + require("../../assets/img/bg.png") + ")",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "100% 100%"
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '100% 100%'
       },
       form: {
-        username: "",
-        password: ""
+        username: '',
+        password: '',
       }
     };
   },
   computed: {
-    ...mapState("login", ["user"])
+    ...mapState('login', ['user'])
   },
   methods: {
-    ...mapActions("login", ["FETCH_LOGIN_ACTION"]),
+    ...mapActions('login', ['FETCH_LOGIN_ACTION']),
     submitForm() {
-      this["FETCH_LOGIN_ACTION"](this.form);
+      this['FETCH_LOGIN_ACTION'](this.form);
     }
   },
   watch: {
@@ -47,5 +47,5 @@ export default {
       user ? this.$router.push("/") : null;
     }
   }
-};
+}
 </script>

@@ -107,7 +107,7 @@ export default {
   data() {
     return {
       dialogFormVisible: false, // 模态框是否关闭
-      title: "", //  模态框标题
+      title: '', //  模态框标题
       index:'',
       form: {
         // 模态框里的form表单的值
@@ -122,10 +122,10 @@ export default {
     }
   },
   created() {
-    this.$store.dispatch("FETCH_HOME_ACTION");
+    this.$store.dispatch('FETCH_HOME_ACTION');
   },
   computed: {
-    ...mapState(["tableData"])
+    ...mapState(['tableData'])
   },
   methods: {
     //  点击修改按钮
@@ -138,7 +138,7 @@ export default {
     //  点击删除按钮
     handleDelete(index, row) {
       let obj = { id: row.supplierId };
-      this.$store.dispatch("FETCH_ACTION_DELETE", obj);
+      this.$store.dispatch('FETCH_ACTION_DELETE', obj);
     },
     //  点击添加按钮
     addClick() {
@@ -149,10 +149,10 @@ export default {
     submitForm() {
       this.dialogFormVisible = false;
       if (this.title === "添加") {
-        this.$store.dispatch("FETCH_ACTION_ADD", this.form);
+        this.$store.dispatch('FETCH_ACTION_ADD', this.form);
       } else {
         let obj = { ...this.form, id: this.index };
-        this.$store.dispatch("FETCH_ACTION_UPDATE", obj);
+        this.$store.dispatch('FETCH_ACTION_UPDATE', obj);
       }
     },
   }
